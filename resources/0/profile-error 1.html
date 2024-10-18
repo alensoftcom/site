@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-light text-center">
+            <h2 class="mb-0">Некорректные данные профиля</h2>
+        </div>
+
+        <div class="card-body">
+            <p class="card-text">Возможные причины ошибки:</p>
+            <ul class="card-text">
+                <li>Некорректный email</li>
+                <li>Недействительный код активации</li>
+                <li>Пользователь не найден</li>
+            </ul>
+            <button
+                    type="button"
+                    class="btn-success btn-primary"
+                    hx-get="/profile"
+                    hx-target="#main-content">
+                <i class="fas fa-sync-alt"></i> Обновить данные профиля
+            </button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,125 @@
+#main-content {
+    min-height: 60em;
+}
+
+div.title > h2 {
+    padding-top: 0; /* fix h2 in footer (from content.css line:190) */
+}
+
+div.sidebar-wrap {
+    padding-top: 10px;
+    color: white;
+}
+
+div.sidebar-wrap #menu {
+    min-height: 30em;
+}
+
+div.sidebar-wrap ul {
+    padding: 0;
+}
+
+div.sidebar-wrap h1,
+div.sidebar-wrap h2,
+div.sidebar-wrap h3,
+div.sidebar-wrap h4,
+div.sidebar-wrap h5,
+div.sidebar-wrap h6 {
+    color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+
+.menu a,
+div.sidebar-wrap a {
+    cursor: pointer;
+}
+
+div.sidebar-wrap a.run:hover {
+    color: #0b0b0b;
+    background-color: #49fc4e;
+}
+
+.btn-green {
+    background-color: green;
+}
+
+label {
+    color: darkblue;
+}
+
+div#google_translate_element {
+    position: fixed;
+    bottom: 5px;
+    left: 20px;
+}
+
+footer {
+    position: relative;
+}
+
+
+.profile {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: red;
+    background-color: rgba(64, 64, 64, 0.05);
+    padding: 2px;
+    font-weight: bold;
+}
+
+
+.code-block {
+    position: absolute;
+    left: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+.complete {
+    color: green;
+}
+
+.failed {
+    color: red
+}
+
+.http {
+    color: blue;
+}
+
+
+.jdbc {
+    color: blueviolet;
+}
+
+.redis {
+    color: darkcyan;
+}
+
+.time {
+    color: darkred;
+}
+
+.sidebar {
+    position: relative;
+}
+
+.fixed {
+
+}
+
+.tasks {
+    padding-bottom: 0.2em;
+}
+

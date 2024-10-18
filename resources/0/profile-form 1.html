@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-light text-center">
+            <h2 class="mb-0">Активация приложения</h2>
+        </div>
+        <div class="card-body">
+            <p>Для продолжения работы вам необходимо активировать приложение.</p>
+            <p>Для этого есть два пути:</p>
+            <ul>
+                <li>Укажите свой email (демонстрационный режим)</li>
+                <li>Введите активационный код (учебный режим)</li>
+            </ul>
+
+            <form id="profile" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input name="email" type="email" class="form-control" id="email"
+                           placeholder="Укажите ваш адрес электронной почты для запуска демонстрационного режима">
+                </div>
+
+                <div class="mb-3">
+                    <label for="activationCode" class="form-label">Активационный код:</label>
+                    <textarea id="activationCode" name="activationCode" rows="3" class="form-control"
+                              placeholder="activation code"></textarea>
+                    <small id="activationCodeHelpBlock" class="text-muted">Укажите ваш код доступа</small>
+                </div>
+
+                <button
+                        class="btn-success btn-primary"
+                        hx-target="#main-content"
+                        hx-confirm="Вы подтверждаете корректность введенных данных?"
+                        hx-post="/profile"
+                        type="button">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
