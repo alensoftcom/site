@@ -1,18 +1,18 @@
 # Spring MVC
 
-## Materials
+## Материалы
 
 - Обзор
 - Понимание Spring Web Model-View-Controller
-- Понимание потока Spring Web MVC
+- Понимание жизненного цикла Spring Web MVC
 - Пример проекта Spring MVC
 
-## Overview
+## Обзор
 
 А **Spring MVC** это фреймворк Java, который используется для создания веб-приложений. Он следует **Model-View-Controller design pattern**.  
 Он реализует все основные функции ядра Spring Framework, такие как Inversion of Control, Dependency Injection. Spring MVC предоставляет элегантное решение для использования MVC в Spring Framework с помощью DispatcherServlet, который полностью интегрирован с Spring IoC-контейнером. DispatcherServlet — это класс, который получает входящий запрос и сопоставляет его с нужным ресурсом, таким как Controllers, Models и Views.
 
-## Understanding Spring Web Model-View-Controller
+## Понимание Spring Web Model-View-Controller
 
 ![Модель-Представление-Контроллер](http://localhost:24100/media/310-01.png)
 
@@ -22,7 +22,7 @@
     
 - **Front Controller** - В Spring Web MVC класс DispatcherServlet работает как фронт-контроллер. Он отвечает за управление потоком приложения Spring MVC.
 
-## Understanding the flow of Spring Web MVC
+## Понимание жизненного цикла Spring Web MVC
 
 ![Жизненный цикл Модель-Представление-Контроллер](http://localhost:24100/media/310-02.png) ![Жизненный цикл Модель-Представление-Контроллер](http://localhost:24100/media/310-03.png)
 
@@ -37,7 +37,7 @@
 9. **DispatcherServlet** отправляет процесс рендеринга на возвращенный **View**.
 10. **View** оказывает **Model** данные и возвращает ответ.
 
-## Spring MVC example project
+## Пример проекта Spring MVC
 
 [https://github.com/eugenp/tutorialshttps://github.com/eugenp/tutorials...](https://github.com/eugenp/tutorials/tree/master/spring-web-modules/spring-mvc-basics/src/main/webapp/WEB-INF/view)
 

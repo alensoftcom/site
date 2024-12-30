@@ -1,6 +1,6 @@
 # ORM ,JPA & Hibernate
 
-## Materials
+## Материалы
 + Persistence
 + ORM
 + JPA

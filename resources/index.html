@@ -5,16 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="twitter:widgets:border-color" content="#55acee">
-    <title>
-        Backend training. Alexander G. Khmelov.
-    </title>
-    <meta name="description" content="Backend training. Alexander G. Khmelov."/>
+    <title>Training</title>
+    <meta name="description" content="Developer training. Author: Alexander G. Khmelov."/>
     <link rel="canonical" href="https://hub.docker.com/r/khmelov/distcomp">
     <link rel="icon" id="favicon" href='/favicon.ico'>
 
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href='static/assets/main.css'>
+    <link rel="stylesheet" href="static/assets/main.css">
     <link rel="stylesheet" href="static/assets/content.css"/>
     <link rel="stylesheet" href="static/assets/my.css"/>
 
@@ -30,26 +28,70 @@
 
     <script src="static/htmx.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+          integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+            integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg"
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+            integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+            onload-off="renderMathInElement(document.body);"></script>
+
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPKQZGXPWM"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HPKQZGXPWM');
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(99088027, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
 </script>
+<noscript><div><img src="https://mc.yandex.ru/watch/99088027" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5SDMJ5LT');</script>
+<!-- End Google Tag Manager -->
+
 <body class="preload">
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SDMJ5LT"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="wrapper wrapper--nofooter">
     <header class="header header--content" role="banner">
-        <div class="fixed-top d-none d-md-block">
+        <div id="language" class="fixed-top d-md-block">
             <div class="float-left" style="color: silver;">Language:&nbsp;</div>
             <div class="top-right-language-container">
                 <button class="btn btn-outline-success btn-sm float-left mr-2" hx-post="/language" name="language"
                         value="en">
                     En
                 </button>
-                <button class="btn btn-outline-success btn-sm float-left" hx-post="/language" name="language" value="ru">
+                <button class="btn btn-outline-success btn-sm float-left" hx-post="/language" name="language"
+                        value="ru">
                     Ru
                 </button>
             </div>
@@ -60,8 +102,13 @@
 
                 <div class="menu__logo">
                     <a class="menu__logojs" href="/">
-                        <img src='/favicon.ico' width="48px" alt="Distributed Computing logo">
+                        <img id='indicator' src='/favicon.ico' width="48px" alt="Distributed Computing logo">
                     </a>
+                    <img id='load-indicator'
+                         src='/static/img/spinner/gear-spinner.svg'
+                         width="24px"
+                         class="htmx-indicator"
+                         style="margin: -6px -36px;">
                 </div>
                 <ul class="menu__list" hx-target="#menu">
                     <li class="menu__item">
@@ -102,6 +149,7 @@
                                                 compose</a></li>
                                             <li><a target="_blank" href="https://kubernetes.io/docs/home/">⭐ K8s</a>
                                             </li>
+                                            <li hx-target="#main-content"><a hx-get="0/test">&nbsp;</a></li>
                                         </ul>
                                     </div>
                                     <div class="stack-column">
@@ -125,14 +173,13 @@
                            class="btn-try btn-primary"
                         >👤 User profile</a>
                     </div>
-
                 </ul>
+
             </nav>
+
         </div>
 
     </header>
-
-
 
 
     <main class="content" aria-label="Content">
@@ -149,7 +196,6 @@
                                          hx-on="htmx:response-error => loadContent('none');"
 
                                     >
-
                                         <h4>Start Menu</h4>
                                         <ul>
                                             <li><a hx-trigger="click,load delay:1s" hx-get="0/welcome" hx-push-url="/"
@@ -180,9 +226,8 @@
                                             <li><a target="_blank" href="https://bit.ly/poit-dist-comp">mega.nz -
                                                 Learning Module Update</a></li>
                                         </ul>
-
-
                                     </div>
+
                                     <div id="application" hx-target="body">
                                         <hr>
                                         <ul>
@@ -192,6 +237,7 @@
                                             </li>
                                         </ul>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

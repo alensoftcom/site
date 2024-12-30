@@ -5,7 +5,7 @@
 
 #### Материалы
 
-- <a hx-get="310/rest-t01">&#9749; REST Basics - Spring Web</a>
+- <a hx-indicator="#indicator" hx-get="310/rest-t01">&#9749; REST Basics - Spring Web</a>
 - <a hx-get="310/rest-t02">&#9749; Spring Web Annotations</a>
 - <a hx-get="310/rest-t03">&#9749; Spring MVC</a>
 - <a hx-get="310/rest-t04">&#9749; REST with Spring</a>

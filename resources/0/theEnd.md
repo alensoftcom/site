@@ -2,9 +2,9 @@
 
 # Shutdown
 
-The app is stopped, close all app tabs or close the browser.
+The application has stopped, please close all application tabs or close the browser.
 
-To return to continuing training, you will need to **restart the application**.
+To resume continuing your training, you will need to **restart the application**.
 
 <img alt="Stop server" src="static/game-over-back-to-school.svg" style="height: 33em;"/>
 

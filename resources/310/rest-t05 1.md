@@ -1,6 +1,6 @@
 ## Error Handling for REST with Spring
 
-## Materials
+## Материалы
 
 - Решение 1: @ExceptionHandler уровня контроллера
 - Решение 2: HandlerExceptionResolver

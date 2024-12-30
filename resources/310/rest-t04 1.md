@@ -1,14 +1,14 @@
 ## REST with Spring
 
-## Materials
-+ Understanding REST in Spring
+## Материалы
++ Понимание REST in Spring
 + Rest Controllers
-+ Spring REST Application Configuration
-+ Versioning a REST API
-+ REST Pagination in Spring
++ Конфигурация Spring REST Application
++ Управление версиями REST API
++ Пагинация REST in Spring
 + Spring HATEOAS
 
-## Understanding REST in Spring
+## Понимание REST in Spring
 
 Фреймворк Spring поддерживает два способа создания RESTful-сервисов:
 
@@ -81,7 +81,7 @@ public class BookController {
 
 **ResponseEntity** используется как метод response. ResponseEntity представляет собой HTTP-ответ, включающий заголовки, тело и статус.
 
-## Spring REST Application Configuration
+## Конфигурация Spring REST Application
 
 Фреймворк Spring предоставляет два способа настройки RESTful-приложения:
 
@@ -232,7 +232,7 @@ public class MainWebAppInitializer implements AbstractAnnotationConfigDispatcher
 
 ![Типичная иерархия контекста](http://localhost:24100/media/310-04.png)
 
-## Versioning a REST API
+## Управление версиями REST API
 
 Есть несколько способов управления версиями REST API. Давайте рассмотрим высокоуровневые подходы к управлению версиями REST API:
 
@@ -307,7 +307,7 @@ http://host/catalog/titles/series/70023522?v=1.5
 
 Если клиент REST API попытается использовать старый API, система должна вернуть **HTTP 410 status code**. **HTTP 410 Gone status code** указывает на то, что доступ к целевому ресурсу на исходном сервере больше невозможен и что это состояние, скорее всего, будет постоянным.
 
-## REST Pagination in Spring
+## Пагинация REST in Spring
 
 Пагинация — это механизм обработки большого набора результатов в любом типе приложения. Реализация пагинации в REST API ничем не отличается, но требует дополнительного процесса обдумывания. Предоставление плавной и эффективной пагинации для REST API может улучшить пользовательский опыт и помочь создать эффективный и быстрый REST API.
 

@@ -47,7 +47,15 @@ function loadContent(url) {
     }
     console.log(url);
     mainContent.innerHTML = "";
-    fetch(url)
+    let indicator = document.getElementById('indicator');
+    indicator.setAttribute('src','static/img/spinner/ball-triangle.svg');
+    fetch(url,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'html/text',
+        },
+        body: "",
+    })
         .then(response => {
             const reader = response.body.getReader();
             let decoder = new TextDecoder();
@@ -56,6 +64,7 @@ function loadContent(url) {
                 reader.read().then(({done, value}) => {
                     if (done) {
                         console.log('readData() complete');
+                        indicator.setAttribute('src','/favicon.ico');
                         return;
                     }
                     let text = decoder.decode(value, {stream: true});
@@ -64,8 +73,9 @@ function loadContent(url) {
                     readData();
                 });
             }
-
+            
             readData();
+
         })
         .catch(error => {
             mainContent.innerHTML = "<h1> No access or app stopped...</h1><br>" + (new Date());
