@@ -21,6 +21,15 @@ function autoLoadContent() {
     mainContent.appendChild(redirectInput);
     //console.log(redirectInput);
     htmx.process(redirectInput);
+    document.body.addEventListener('htmx:sendError', function (evt) {
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = "<h1> No access or Application has stopped...</h1><br>" + (new Date());
+        console.error('ERR:', error);
+    });
+    document.body.addEventListener('htmx:beforeSend', function (evt) {
+        ym(99088027, 'reachGoal', evt.detail.target);
+        console.log(evt.target["htmx-internal-data"].path)
+    });
 }
 
 //fake invocation
@@ -48,8 +57,8 @@ function loadContent(url) {
     console.log(url);
     mainContent.innerHTML = "";
     let indicator = document.getElementById('indicator');
-    indicator.setAttribute('src','static/img/spinner/ball-triangle.svg');
-    fetch(url,{
+    indicator.setAttribute('src', 'static/img/spinner/ball-triangle.svg');
+    fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'html/text',
@@ -64,7 +73,7 @@ function loadContent(url) {
                 reader.read().then(({done, value}) => {
                     if (done) {
                         console.log('readData() complete');
-                        indicator.setAttribute('src','/favicon.ico');
+                        indicator.setAttribute('src', '/favicon.ico');
                         return;
                     }
                     let text = decoder.decode(value, {stream: true});
@@ -73,7 +82,7 @@ function loadContent(url) {
                     readData();
                 });
             }
-            
+
             readData();
 
         })
