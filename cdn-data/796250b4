@@ -9,6 +9,42 @@ function getStartPageFromUri() {
     }
 }
 
+function ymEvent(kind, path) {
+    if (!path.includes('action')) {
+        let parts = (path + '').split('/', 2);
+        let folder = parts[0].length > 0
+            ? parts[0]
+            : 'root';
+        let page = parts.length > 0
+            ? parts[1]
+            : parts[0];
+        if (folder === 'test') {
+            //swap test and task
+            folder = page;
+            page = 'test'
+        }
+        let eventData = {
+            folder:{
+                [folder]: {
+                    [document.title]: page
+                }
+            },
+            user:{
+                [document.title]: {
+                    [folder]: page,
+                }
+            },
+            [kind]: {
+                [folder]: {
+                    [page]: document.title
+                }
+            }
+        };
+        //console.log(eventData);
+        ym(99088027, 'reachGoal', 'map', eventData);
+    }
+}
+
 function autoLoadContent() {
     //console.log("autoLoadContent");
     const redirectInput = document.createElement('input');
@@ -27,8 +63,8 @@ function autoLoadContent() {
         console.error('ERR:', error);
     });
     document.body.addEventListener('htmx:beforeSend', function (evt) {
-        ym(99088027, 'reachGoal', evt.detail.target);
-        console.log(evt.target["htmx-internal-data"].path)
+        let path = evt.target["htmx-internal-data"].path;
+        ymEvent('click', path);
     });
 }
 
@@ -54,10 +90,10 @@ function loadContent(url) {
             return;
         }
     }
-    console.log(url);
     mainContent.innerHTML = "";
     let indicator = document.getElementById('indicator');
     indicator.setAttribute('src', 'static/img/spinner/ball-triangle.svg');
+    ymEvent('load', url); // 310/test
     fetch(url, {
         method: 'POST',
         headers: {
@@ -72,12 +108,12 @@ function loadContent(url) {
             function readData() {
                 reader.read().then(({done, value}) => {
                     if (done) {
-                        console.log('readData() complete');
+                        console.log('debug: readData() complete');
                         indicator.setAttribute('src', '/favicon.ico');
                         return;
                     }
                     let text = decoder.decode(value, {stream: true});
-                    mainContent.innerHTML += text
+                    mainContent.innerHTML += text;
                     setTestCaseClickListener();
                     readData();
                 });
