@@ -7,4 +7,8 @@ META-INF
 
 
 **/log/*.txt
-cdn-bin/*.txt
+cdn-bin/*.?
+cdn-bin/*.??
+cdn-bin/*.???
+cdn-bin/*.html
+cdn-bin/*.jpeg
