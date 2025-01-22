@@ -1,9 +1,0 @@
-UserData{
-	lastName='Борисов'
-	firstName='Андрей'
-	course='DC'
-	finish=2025-02-22T09:23:00Z
-	start=2025-01-22T09:23:00Z
-	hashcode=1429844193
-	email='testapp@javaguru.by'
-}

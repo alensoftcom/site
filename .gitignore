@@ -5,8 +5,11 @@
 templates
 META-INF
 
-
+#логи активации
+**/txt/*.txt
 **/log/*.txt
+
+#декодированный контент
 cdn-bin/*.?
 cdn-bin/*.??
 cdn-bin/*.???

@@ -1,9 +1,0 @@
-UserData{
-	lastName='Хмелев'
-	firstName='Александр'
-	course='DC'
-	finish=2025-02-21T14:07:00Z
-	start=2025-01-21T14:07:00Z
-	hashcode=462
-	email='kaxomedit@ya.ru'
-}

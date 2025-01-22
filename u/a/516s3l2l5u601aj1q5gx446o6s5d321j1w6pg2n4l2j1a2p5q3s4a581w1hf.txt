@@ -1,9 +1,0 @@
-UserData{
-	lastName='Telemnar'
-	firstName='Taurnil'
-	course='DC'
-	finish=2025-02-21T12:34:00Z
-	start=2025-01-21T12:34:00Z
-	hashcode=2013051724
-	email='taurnil@live.ru'
-}

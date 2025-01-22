@@ -1,9 +1,0 @@
-UserData{
-	lastName='Прохоров'
-	firstName='Владимир'
-	course='DC'
-	finish=2025-02-21T12:34:00Z
-	start=2025-01-21T12:34:00Z
-	hashcode=1092542597
-	email='vladimirpr1994@mail.ru'
-}
