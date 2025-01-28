@@ -1,0 +1,17 @@
+.idea
+*.iml
+.DS_Store
+**/.DS_Store
+templates
+META-INF
+
+#логи активации
+**/txt/*.txt
+**/log/*.txt
+
+#декодированный контент
+cdn-bin/*.?
+cdn-bin/*.??
+cdn-bin/*.???
+cdn-bin/*.html
+cdn-bin/*.jpeg
