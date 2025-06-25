@@ -138,7 +138,7 @@ function FindProxyForURL(url, host) {
     ];
     for (let i = 0; i < banlist.length; i++) {
         if (shExpMatch(url,banlist[i])) {
-            return "PROXY 192.168.100.100:8888; SOCKS 127.0.0.1:8889; DIRECT";
+            return "SOCKS 127.0.0.1:8889; PROXY 192.168.100.100:8888; DIRECT";
         }
     }
     return "DIRECT";
