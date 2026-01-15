@@ -124,7 +124,7 @@ function FindProxyForURL(url, host) {
 
         '*.google-analytics.*',
         '*.googletagmanager*',
-        '*.google.*',
+        '*.google.com/*',
         '*.google.com/ccm/*',
         '*.google.com/$rpc*',
         '*gemini.google.com/*',
