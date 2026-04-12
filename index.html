@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alenface | Native LLM Client for Apple Silicon</title>
+    <title>Alenface | The Ultralight Native LLM Client for macOS</title>
     <style>
         :root {
             --bg: #ffffff;
@@ -13,7 +13,6 @@
             --card-bg: #f5f5f7;
             --terminal-bg: #1e1e1e;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
@@ -23,18 +22,15 @@
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
-
         .container {
             max-width: 980px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         header {
             padding: 100px 0 60px;
             text-align: center;
         }
-
         .version-badge {
             background: var(--card-bg);
             padding: 6px 14px;
@@ -45,7 +41,6 @@
             display: inline-block;
             margin-bottom: 24px;
         }
-
         h1 {
             font-size: 64px;
             font-weight: 700;
@@ -53,22 +48,20 @@
             margin: 0 0 24px;
             line-height: 1.1;
         }
-
         .hero-sub {
             font-size: 24px;
             color: var(--secondary);
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto 48px;
             font-weight: 400;
         }
-
         .cta-group {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 24px;
+            flex-wrap: wrap;
         }
-
         .btn {
             padding: 14px 28px;
             border-radius: 24px;
@@ -76,106 +69,80 @@
             font-weight: 500;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-
         .btn-primary {
             background-color: var(--accent);
             color: white;
         }
-
         .btn-primary:hover {
             background-color: #0077ed;
             transform: scale(1.02);
         }
-
         .btn-secondary {
-            color: var(--accent);
+            background-color: var(--card-bg);
+            color: var(--text);
         }
-
         .btn-secondary:hover {
-            text-decoration: underline;
+            background-color: #e8e8ed;
         }
-
-        /* Stats & Tech Stack */
         .tech-specs {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin: 80px 0;
         }
-
         .spec-card {
             background: var(--card-bg);
             padding: 32px;
             border-radius: 20px;
             text-align: center;
         }
-
         .spec-card h3 {
             font-size: 32px;
             margin: 0;
             color: var(--text);
             font-weight: 700;
         }
-
         .spec-card p {
             margin: 12px 0 0;
             color: var(--secondary);
             font-size: 15px;
         }
-
-        /* Features Section */
-        .feature-grid {
-            padding: 80px 0;
+        .content-section {
+            padding: 60px 0;
+            border-top: 1px solid #d2d2d7;
         }
-
-        .feature-box {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-bottom: 120px;
-        }
-
-        .feature-box:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .feature-content {
-            flex: 1;
-        }
-
-        .feature-content h2 {
+        .content-section h2 {
             font-size: 40px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             letter-spacing: -0.01em;
         }
-
-        .feature-content p {
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .feature-item {
+            margin-bottom: 32px;
+        }
+        .feature-item h4 {
             font-size: 20px;
+            margin: 0 0 8px 0;
+        }
+        .feature-item p {
             color: var(--secondary);
-            margin-bottom: 24px;
+            margin: 0;
         }
-
-        .badge-list {
-            display: flex;
-            gap: 8px;
-            margin-top: 16px;
-        }
-
-        .badge {
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 6px;
-            background: #e8e8ed;
-        }
-
-        /* Terminal Instruction */
         .terminal-container {
-            margin-top: 80px;
+            margin-top: 40px;
             text-align: left;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 20px;
         }
-
         .terminal-header {
             background: #333;
             padding: 8px 16px;
@@ -183,12 +150,10 @@
             display: flex;
             gap: 6px;
         }
-
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .dot.red { background: #ff5f56; }
         .dot.yellow { background: #ffbd2e; }
         .dot.green { background: #27c93f; }
-
         .terminal-body {
             background: var(--terminal-bg);
             color: #f8f8f2;
@@ -198,23 +163,23 @@
             font-size: 14px;
             overflow-x: auto;
         }
-
-        .code-comment { color: #6272a4; }
         .code-cmd { color: #50fa7b; }
-
-        /* Support Section */
-        .support-card {
-            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
-            border: 1px solid #d2d2d7;
-            padding: 60px;
-            border-radius: 28px;
-            text-align: center;
-            margin: 100px 0;
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
         }
-
-        .support-card h2 { font-size: 36px; margin-bottom: 16px; }
-
-        /* Student Section in Footer */
+        .tier-card {
+            border: 1px solid #d2d2d7;
+            padding: 32px;
+            border-radius: 20px;
+            background: var(--bg);
+        }
+        .tier-card h3 {
+            margin: 0 0 16px 0;
+            color: var(--accent);
+        }
         footer {
             border-top: 1px solid #d2d2d7;
             padding: 60px 0;
@@ -222,7 +187,6 @@
             color: var(--secondary);
             font-size: 14px;
         }
-
         .student-corner {
             margin-bottom: 32px;
             padding: 16px;
@@ -230,20 +194,16 @@
             border-radius: 12px;
             display: inline-block;
         }
-
         .student-corner a {
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
         }
-
         footer nav { margin-top: 20px; }
         footer nav a { color: var(--secondary); margin: 0 12px; text-decoration: none; }
-
         @media (max-width: 768px) {
             h1 { font-size: 40px; }
-            .tech-specs { grid-template-columns: 1fr; }
-            .feature-box { flex-direction: column !important; text-align: center; }
+            .tech-specs, .grid-2, .tier-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -252,68 +212,85 @@
 <div class="container">
     <header>
         <div class="version-badge">Alenface v26.2.2 </div>
-        <h1>Power to the Local.</h1>
-        <p class="hero-sub">The 60MB native LLM client for Apple Silicon. Built with Java 25 and Project Panama for maximum hardware efficiency.</p>
+        <h1>The Ultralight Native LLM Client.</h1>
+        <p class="hero-sub">Pure Java powered by Llama.cpp and integrated with a native browser engine. No Electron. No Chromium. No JCEF. No compromises.</p>
         <div class="cta-group">
-            <a href="https://www.patreon.com/posts/alenface-native-155364672" class="btn btn-primary">Join Phase Zero on Patreon</a>
-            <a href="#setup" class="btn btn-secondary">Installation Guide</a>
+            <a href="https://github.com/alensoftcom/site/releases/download/macos/Alenface-26.2.2.dmg" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download for macOS
+            </a>
+            <a href="https://www.patreon.com/alensoft" class="btn btn-secondary">Support on Patreon</a>
         </div>
     </header>
 
     <div class="tech-specs">
         <div class="spec-card">
-            <h3>60MB</h3>
-            <p>Tiny distribution footprint. No web-tech bloat.</p>
+            <h3>65 MB</h3>
+            <p>Extreme Efficiency. Only 95MB installed on disk. Native engineering stays lean.</p>
         </div>
         <div class="spec-card">
             <h3>Native</h3>
-            <p>Built for M1/M2/M3/M4. Direct hardware access.</p>
+            <p>Built with Project Panama for a true native experience on Apple Silicon.</p>
         </div>
         <div class="spec-card">
-            <h3>Ternary</h3>
-            <p>Optimized for PrismML Bonsai-8M and 1-bit models.</p>
+            <h3>Bonsai-8B</h3>
+            <p>Full support for 1-bit/ternary quantization. High-quality 8B intelligence at just 1.24 GB.</p>
         </div>
     </div>
 
-    <section class="feature-grid">
-        <div class="feature-box">
-            <div class="feature-content">
-                <h2>No Electron. No Lag.</h2>
-                <p>Alenface uses modern Java 25 APIs to communicate directly with your Mac's neural capabilities. Startup is instant, and the UI remains fluid even during heavy inference.</p>
-                <div class="badge-list">
-                    <span class="badge">👁 Vision [cite: 14]</span>
-                    <span class="badge">🔧 Tool Use [cite: 14]</span>
-                    <span class="badge">💡 Reasoning [cite: 15]</span>
+    <section class="content-section">
+        <div class="grid-2">
+            <div>
+                <h2>Not just another wrapper.</h2>
+                <p style="font-size: 18px; color: var(--secondary); margin-bottom: 32px;">While other local LLM tools are built on bloated frameworks and consume gigabytes of space, Alenface is engineered for speed and precision.</p>
+                <div class="feature-item">
+                    <h4>Hugging Face Integration</h4>
+                    <p>Seamlessly search, download, and manage GGUF model variants directly within the app.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>PrismML Bonsai Ready</h4>
+                    <p>We provide continuous support for the Bonsai architecture, ensuring you can run cutting-edge AI on a standard laptop.</p>
                 </div>
             </div>
-            <div style="flex:1; background: var(--card-bg); border-radius: 20px; height: 300px; display: flex; align-items: center; justify-content: center; color: #d2d2d7;">
-                [UI Screenshot]
+
+            <div class="terminal-container">
+                <h3 style="margin-top:0;">Installation Note</h3>
+                <p style="color: var(--secondary); font-size: 14px;">Alenface is currently in its Bootstrap Phase (unsigned). To run the downloaded app, clear macOS Gatekeeper via Terminal:</p>
+                <div class="terminal-header">
+                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <span class="code-cmd">xattr -cr /Applications/Alenface.app</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="setup">
-        <div class="terminal-container">
-            <h2>Phase Zero Installation</h2>
-            <p>Alenface is currently in a bootstrap phase. To run this unsigned test build, follow these steps: </p>
-
-            <div class="terminal-header">
-                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-            </div>
-            <div class="terminal-body">
-                <span class="code-comment"># 1. Install to your Applications folder</span><br>
-                <span class="code-comment"># 2. Open Terminal and clear macOS Gatekeeper:</span><br>
-                <span class="code-cmd">xattr -cr /Applications/Alenface.app</span>
-            </div>
-            <p style="font-size: 13px; color: var(--secondary); margin-top: 10px;">
-                Learn more about xattr: <a href="https://ss64.com/mac/xattr.html" style="color: var(--secondary);">ss64.com/mac/xattr.html</a> [cite: 47]
-            </p>
+    <section class="content-section" id="support">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <h2>The Path Forward: Phase Zero</h2>
+            <p style="font-size: 18px; color: var(--secondary);">The immediate goal is to transition from test builds to a professionally distributed app. We are raising funds for Apple Developer Code Signing, dedicated build servers, and cross-platform foundations (Windows/Linux).</p>
         </div>
 
-        <div class="support-card">
-            <h2>The $99 Milestone</h2>
-            <p>We are raising funds for the Apple Developer Program registration. This will allow us to sign and notarize Alenface, enabling seamless "one-click" installs for everyone.</p>
-            <a href="https://www.patreon.com/posts/alenface-native-155364672" class="btn btn-primary" style="margin-top: 24px; display: inline-block;">Support the Development</a>
+        <div class="tier-grid">
+            <div class="tier-card">
+                <h3>$5 Supporter</h3>
+                <p>Help us clear the "Phase Zero" hurdles and get your name in the "About" screen of the application.</p>
+            </div>
+            <div class="tier-card">
+                <h3>$15 Founding Dev</h3>
+                <p>Get early access to signed builds, join the Windows Port roadmap, and get your name in the "About" screen.</p>
+            </div>
+            <div class="tier-card">
+                <h3>$50 Visionary</h3>
+                <p>Gain access to the Linux Port insider track, get direct tech support, and receive deep-dive technical updates.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center;">
+            <h3 style="margin-top: 0;">Spread the Magic</h3>
+            <p style="color: var(--secondary); margin-bottom: 24px;">Can't support financially? Be our zero-bloat evangelist. Record a video of Alenface running a 1GB+ model with lightning speed, or mention us on Reddit as the ultimate lightweight alternative to Electron clients.</p>
+            <a href="https://www.patreon.com/alensoft" class="btn btn-primary">Join the Mission on Patreon</a>
         </div>
     </section>
 
@@ -322,10 +299,7 @@
             🎓 <b>Student Corner:</b> Looking for the Docker Hub materials?
             <a href="https://hub.docker.com/r/khmelov/distcomp">Access the distcomp repository here</a>.
         </div>
-
-        <p>© 2026 Alensoft. Dedicated to lightweight, local-first software.<br>
-            Built with Java 25 & Project Panama.</p>
-
+        <p>© 2026 Alensoft. Dedicated to lightweight, local-first software.<br>Built with Java 25 & Project Panama.</p>
         <nav>
             <a href="https://www.patreon.com/alensoft">Patreon</a>
             <a href="#">GitHub</a>
