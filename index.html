@@ -70,6 +70,21 @@
             flex-wrap: wrap;
         }
 
+        .demo-showcase {
+            max-width: 900px;
+            margin: 64px auto 0;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #d2d2d7;
+            box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.25), 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .demo-showcase img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
         .btn {
             padding: 14px 28px;
             border-radius: 24px;
@@ -266,6 +281,11 @@
             .tech-specs, .grid-2, .tier-grid {
                 grid-template-columns: 1fr;
             }
+
+            .demo-showcase {
+                margin-top: 40px;
+                border-radius: 12px;
+            }
         }
     </style>
 </head>
@@ -305,7 +325,7 @@
         <p class="hero-sub">Pure Java powered by Llama.cpp and integrated with a native browser engine. No Electron. No
             Chromium. No JCEF. No compromises.</p>
         <div class="cta-group">
-            <a href="https://github.com/alensoftcom/alenface/releases/download/v26.2.3/Alenface.dmg"
+            <a href="https://github.com/alensoftcom/alenface/releases/download/latest/Alenface.dmg"
                class="btn btn-primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -317,6 +337,10 @@
             </a>
             <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link"
                class="btn btn-secondary">Support on Patreon</a>
+        </div>
+
+        <div class="demo-showcase">
+            <img src="assets/img/26-6-3.gif" alt="Alenface running a local LLM on macOS, demonstrating fast native inference" width="1200" height="760" loading="lazy">
         </div>
     </header>
 
