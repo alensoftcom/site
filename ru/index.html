@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alenface | Ультралегкий нативный LLM-клиент для macOS</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<script src="../assets/js/metrica.js"></script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/99088027" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<nav class="lang-switcher">
+    <a href="/">EN</a>
+    <a href="/ru/">RU</a>
+    <a href="/de/">DE</a>
+    <a href="/es/">ES</a>
+    <a href="/fr/">FR</a>
+    <a href="/it/">IT</a>
+</nav>
+<div class="container">
+    <header>
+        <div class="version-badge">Alenface v26.6.3</div>
+        <h1>Ультралегкий нативный LLM-клиент.</h1>
+        <p class="hero-sub">Чистый Java на базе Llama.cpp с интеграцией нативного браузерного движка. Никакого Electron. Никакого Chromium. Никакого JCEF. Никаких компромиссов.</p>
+        <div class="cta-group">
+            <a href="https://github.com/alensoftcom/alenface/releases/download/latest/Alenface.dmg"
+               class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Скачать для macOS
+            </a>
+            <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link"
+               class="btn btn-secondary">Поддержать на Patreon</a>
+        </div>
+
+        <div class="demo-showcase">
+            <img src="../assets/img/26-6-3.gif" alt="Alenface запускает локальную LLM на macOS, демонстрируя быстрый нативный инференс" width="1200" height="760" loading="lazy">
+        </div>
+    </header>
+
+    <div class="tech-specs">
+        <div class="spec-card">
+            <h3>65 МБ</h3>
+            <p>Экстремальная эффективность. Всего 95 МБ после установки. Нативная разработка остается легкой.</p>
+        </div>
+        <div class="spec-card">
+            <h3>Нативность</h3>
+            <p>Создано с использованием Project Panama для по-настоящему нативного опыта на Apple Silicon.</p>
+        </div>
+        <div class="spec-card">
+            <h3>Bonsai-8B</h3>
+            <p>Полная поддержка 1-битной/тернарной квантизации. Высококачественный ИИ на 8 миллиардов параметров всего в 1.14 ГБ.</p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="grid-2">
+            <div>
+                <h2>Не просто очередная оболочка.</h2>
+                <p style="font-size: 18px; color: var(--secondary); margin-bottom: 32px;">В то время как другие локальные LLM-инструменты построены на раздутых фреймворках и потребляют гигабайты памяти, Alenface спроектирован для скорости и точности.</p>
+                <div class="feature-item">
+                    <h4>Интеграция с Hugging Face</h4>
+                    <p>Удобный поиск, загрузка и управление вариантами моделей GGUF прямо в приложении.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Готовность к PrismML Bonsai</h4>
+                    <p>Мы обеспечиваем постоянную поддержку архитектуры Bonsai, чтобы вы могли запускать передовой ИИ на стандартном ноутбуке.</p>
+                </div>
+            </div>
+
+            <div class="terminal-container">
+                <h3 style="margin-top:0;">Заметка по установке</h3>
+                <p style="color: var(--secondary); font-size: 14px;">Alenface сейчас находится на стадии Bootstrap (без подписи). Чтобы запустить скачанное приложение, очистите macOS Gatekeeper через Терминал:</p>
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <span class="code-cmd">xattr -cr /Applications/Alenface.app</span>
+                </div>
+
+                <p style="color: var(--secondary); font-size: 14px;">Запуск одной строкой через Терминал:</p>
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <span class="code-cmd">xattr -c /Applications/Alenface.app && open -a Alenface</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="support">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <h2>Путь вперед: Фаза Ноль</h2>
+            <p style="font-size: 18px; color: var(--secondary);">Ближайшая цель — переход от тестовых сборок к профессионально распространяемому приложению. Мы собираем средства на подпись кода разработчика Apple, выделенные серверы для сборок и кроссплатформенную базу (Windows/Linux).</p>
+        </div>
+
+        <div class="tier-grid">
+            <div class="tier-card">
+                <h3>$5 Поддерживающий</h3>
+                <p>Помогите нам преодолеть препятствия "Фазы Ноль" и получите свое имя на экране "О программе" в приложении.</p>
+            </div>
+            <div class="tier-card">
+                <h3>$15 Разработчик-основатель</h3>
+                <p>Получите ранний доступ к подписанным сборкам, присоединяйтесь к плану разработки порта на Windows и получите свое имя на экране "О программе".</p>
+            </div>
+            <div class="tier-card">
+                <h3>$50 Визионер</h3>
+                <p>Получите инсайдерский доступ к порту на Linux, прямую техподдержку и глубокие технические обновления.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center;">
+            <h3 style="margin-top: 0;">Распространяйте магию</h3>
+            <p style="color: var(--secondary); margin-bottom: 24px;">Не можете поддержать финансово? Станьте нашим евангелистом без-bloatware. Запишите видео, как Alenface молниеносно запускает модель 1ГБ+, или упомяните нас на Reddit как лучшую легкую альтернативу клиентам на Electron.</p>
+            <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link"
+               class="btn btn-primary">Присоединиться к миссии на Patreon</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="student-corner">
+            🎓 <b>Уголок студента:</b> Ищете материалы на Docker Hub?
+            <a target="_blank" href="https://hub.docker.com/r/khmelov/distcomp">Доступ к репозиторию distcomp здесь</a>.
+        </div>
+        <p>© 2026 Alensoft. Создано Александром Хмелевым, профессором ML и архитектором ПО.<br>Посвящается легким, работающим локально программам на Java.</p>
+        <nav>
+            <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link">Patreon</a>
+            <a target="_blank" href="https://github.com/alensoftcom/alenface/releases">GitHub</a>
+            <a href="#">Политика конфиденциальности</a>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>

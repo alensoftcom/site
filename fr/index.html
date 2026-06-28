@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alenface | Le client LLM natif ultraléger pour macOS</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<script src="../assets/js/metrica.js"></script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/99088027" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<nav class="lang-switcher">
+    <a href="/">EN</a>
+    <a href="/ru/">RU</a>
+    <a href="/de/">DE</a>
+    <a href="/es/">ES</a>
+    <a href="/fr/">FR</a>
+    <a href="/it/">IT</a>
+</nav>
+<div class="container">
+    <header>
+        <div class="version-badge">Alenface v26.6.3</div>
+        <h1>Le client LLM natif ultraléger.</h1>
+        <p class="hero-sub">Java pur propulsé par Llama.cpp et intégré à un moteur de navigateur natif. Pas d'Electron. Pas de
+            Chromium. Pas de JCEF. Aucun compromis.</p>
+        <div class="cta-group">
+            <a href="https://github.com/alensoftcom/alenface/releases/download/latest/Alenface.dmg"
+               class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Télécharger pour macOS
+            </a>
+            <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link"
+               class="btn btn-secondary">Soutenir sur Patreon</a>
+        </div>
+
+        <div class="demo-showcase">
+            <img src="../assets/img/26-6-3.gif" alt="Alenface exécutant un LLM local sur macOS, démontrant une inférence native rapide" width="1200" height="760" loading="lazy">
+        </div>
+    </header>
+
+    <div class="tech-specs">
+        <div class="spec-card">
+            <h3>65 Mo</h3>
+            <p>Efficacité extrême. Seulement 95 Mo installés sur le disque. L'ingénierie native reste légère.</p>
+        </div>
+        <div class="spec-card">
+            <h3>Natif</h3>
+            <p>Construit avec Project Panama pour une véritable expérience native sur Apple Silicon.</p>
+        </div>
+        <div class="spec-card">
+            <h3>Bonsai-8B</h3>
+            <p>Support complet de la quantification 1-bit/ternaire. Une intelligence de 8 milliards de paramètres de haute qualité en seulement 1,14 Go.</p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="grid-2">
+            <div>
+                <h2>Pas juste une autre surcouche.</h2>
+                <p style="font-size: 18px; color: var(--secondary); margin-bottom: 32px;">Alors que d'autres outils LLM locaux sont construits sur des frameworks lourds et consomment des gigaoctets d'espace, Alenface est conçu pour la vitesse et la précision.</p>
+                <div class="feature-item">
+                    <h4>Intégration Hugging Face</h4>
+                    <p>Recherchez, téléchargez et gérez les variantes de modèles GGUF directement dans l'application.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Prêt pour PrismML Bonsai</h4>
+                    <p>Nous assurons un support continu de l'architecture Bonsai, vous permettant d'exécuter une IA de pointe sur un ordinateur portable standard.</p>
+                </div>
+            </div>
+
+            <div class="terminal-container">
+                <h3 style="margin-top:0;">Note d'installation</h3>
+                <p style="color: var(--secondary); font-size: 14px;">Alenface est actuellement dans sa phase de démarrage (non signé). Pour exécuter l'application téléchargée, nettoyez Gatekeeper de macOS via le terminal :</p>
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <span class="code-cmd">xattr -cr /Applications/Alenface.app</span>
+                </div>
+
+                <p style="color: var(--secondary); font-size: 14px;">Démarrage en une ligne via le terminal :</p>
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <span class="code-cmd">xattr -c /Applications/Alenface.app && open -a Alenface</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="support">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+            <h2>La voie à suivre : Phase Zéro</h2>
+            <p style="font-size: 18px; color: var(--secondary);">L'objectif immédiat est de passer des versions de test à une application distribuée professionnellement. Nous collectons des fonds pour la signature de code Apple Developer, des serveurs de build dédiés et des fondations multiplateformes (Windows/Linux).</p>
+        </div>
+
+        <div class="tier-grid">
+            <div class="tier-card">
+                <h3>5 $ Supporter</h3>
+                <p>Aidez-nous à franchir les obstacles de la "Phase Zéro" et faites figurer votre nom sur l'écran "À propos" de l'application.</p>
+            </div>
+            <div class="tier-card">
+                <h3>15 $ Développeur fondateur</h3>
+                <p>Obtenez un accès anticipé aux versions signées, rejoignez la feuille de route du portage Windows et faites figurer votre nom sur l'écran "À propos".</p>
+            </div>
+            <div class="tier-card">
+                <h3>50 $ Visionnaire</h3>
+                <p>Accédez au suivi interne du portage Linux, bénéficiez d'un support technique direct et recevez des mises à jour techniques approfondies.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px; background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center;">
+            <h3 style="margin-top: 0;">Partagez la magie</h3>
+            <p style="color: var(--secondary); margin-bottom: 24px;">Vous ne pouvez pas nous soutenir financièrement ? Soyez notre évangéliste du "zéro bloat". Enregistrez une vidéo d'Alenface exécutant un modèle de plus de 1 Go avec une vitesse fulgurante, ou mentionnez-nous sur Reddit comme l'alternative légère ultime aux clients Electron.</p>
+            <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link"
+               class="btn btn-primary">Rejoignez la mission sur Patreon</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="student-corner">
+            🎓 <b>Coin étudiant :</b> Vous cherchez les documents Docker Hub ?
+            <a target="_blank" href="https://hub.docker.com/r/khmelov/distcomp">Accédez au dépôt distcomp ici</a>.
+        </div>
+        <p>© 2026 Alensoft. Conçu par Oleksandr Khmelov, professeur de ML et architecte logiciel.<br>Dédié aux logiciels légers et locaux construits avec Java.</p>
+        <nav>
+            <a target="_blank" href="https://www.patreon.com/posts/alenface-native-155364672?utm_medium=clipboard_copy&utm_source=alensoft.com&utm_campaign=postshare_creator&utm_content=join_link">Patreon</a>
+            <a target="_blank" href="https://github.com/alensoftcom/alenface/releases">GitHub</a>
+            <a href="#">Politique de confidentialité</a>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
